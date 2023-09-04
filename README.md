@@ -18,20 +18,19 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 [IS THIS OVER DETAILED??] The game stores a list of words, which the computer will choose from, at random. The user is then asked to input a letter and the game checks that this is a single letter from the alphabet, if it is not, the user is asked to input another letter. The code converts the letter to lowercase, if necessary, then checks if it is in the word, returning relevant statements if it is/isn't. 
 
 ## Installation instructions
-
-
-## Usage instructions
 1. Clone or download this repository to your local machine.
 
 2. Open a terminal and navigate to the directory where the code is located.
 
 3. Run the Python script using the following command: python milestone_5.py
 
-4. The program will display a list of favorite fruits and select a random word from the list.
 
-5. You will be prompted to enter a single letter.
+## Usage instructions
+1. The program will display a list of favorite fruits and select a random word from the list.
 
-6. Continue entering letters until you guess all the letters in the random word or decide to quit.
+2. You will be prompted to enter a single letter.
+
+3. Continue entering letters until you guess all the letters in the random word or decide to quit.
 
 ## File structure
 - `milestone_5.py`: Contains the main Python code for the game.
