@@ -26,15 +26,15 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 
 
 ## Usage instructions
-1. The program will display a list of favorite fruits and select a random word from the list.
+1. The program will ask you to enter a single letter.
 
-2. You will be prompted to enter a single letter.
+2. Follow the instructions in the terminal as you guess the letters.
 
-3. Continue entering letters until you guess all the letters in the random word or decide to quit.
+3. Continue entering letters until you guess all the letters in the random word, run out of lives or decide to quit.
 
 ## File structure
 - `milestone_5.py`: Contains the main Python code for the game.
-- `favourite_fruits`: A list of favorite fruits from which a random word is selected.
+- 'Hangman()': Class which includes all the attributes and methods for the game
 - `ask_for_input()`: Function to take user input and validate it.
 - `check_guess(guess)`: Function to check if the entered letter is in the random word.
 
