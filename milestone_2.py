@@ -6,14 +6,16 @@ word_list = favourite_fruits
 
 print(word_list)
 
-word = random.choice(word_list)
+random_word = random.choice(word_list)
 
-print(word)
+print(random_word)
 
-guess = input("Choose a letter: ")
+while True:
+    guess = input("Enter a single letter: ")
 
-if len(guess) == 1 and guess.isalpha():
-    print("Good guess")
-else:
-    print("Oops! That is not a valid input.")
-    
+    if len(guess) == 1 and guess.isalpha():
+        print("Good guess!")
+        break
+    else:
+        print("Oops! That is not a valid input.")
+        break
