@@ -12,7 +12,7 @@ class Hangman:
         word_guessed (list): a representation of the word beign guessed. _ signify the letters of the word.
         num_letters (int): the number of letters left to guess in the word.
         """
-    def __init__(self, word_list, num_lives=5):
+    def __init__(self, word_list, num_lives):
         """
         See help(Hangman) for accurate signature.
         """
@@ -32,16 +32,16 @@ class Hangman:
         It then returns a string to let the user know if this is an invalid input, or if they have already tried the letter.
         If it is valid and unique, it adds the input to a list of guesses and passes the letter through the check_guess function.
         """
-        while True:
-            self.guess = input("Enter a single letter: ")
+        
+        guess = input("Enter a single letter: ")
 
-            if len(self.guess) != 1 or not self.guess.isalpha():
-                print("Invalid letter. Please, enter a single alphabetical character.")
-            elif self.guess in self.list_of_guesses:
-                print("You already tried that letter!")
-            else:
-                self.check_guess(self.guess)
-                self.list_of_guesses.append(self.guess)
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid letter. Please, enter a single alphabetical character.")
+        elif guess in self.list_of_guesses:
+            print("You already tried that letter!")
+        else:
+            self.check_guess(guess)
+            self.list_of_guesses.append(guess)
 
 
     def check_guess(self, guess):
@@ -71,23 +71,29 @@ class Hangman:
             print(f"Sorry, {guess} is not in the word. Try again.")
             print(f"You have {self.num_lives} lives left.")
 
-    def play_game(self):
-
-        while True:
-            if self.num_lives == 0:
-                print("You lost!")
-                break
-            elif self.num_letters > 0:
-                self.ask_for_input()   
-            elif self.num_lives != 0 and self.num_letters < 1:
-                print("Congratulations. You won the game!")
-                break
 
 def play_game(word_list):
+    """
+    This function codes the logic for the game, allowing it to end.
+
+        Args:
+            word_list (list): a list of words the computer choses from at random.
+
+        The purpose of this functions is to ensure the game ends either when the player loses as they run out of lives,
+        or the player wins by guessing all the letters correctly.
+    """
     num_lives = 5
     game = Hangman(word_list, num_lives)
 
-    game.play_game()
+    while True:
+      if game.num_lives == 0:
+          print("You lost!")
+          break
+      elif game.num_letters > 0:
+          game.ask_for_input()   
+      elif game.num_lives != 0 and game.num_letters < 1:
+          print("Congratulations. You won the game!")
+          break
 
-# Call the play_game function to start the game
+# Call the function to play the game, insert any list of words to play with.
 play_game(["pineapple", "grapes", "mango", "strawberry", "kiwi"])
