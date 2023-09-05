@@ -1,5 +1,6 @@
 # Hangman
-[CHECK AND EDIT ALL SECTIONS]
+
+
 ## Table of contents
 - Description
 - Installation instructions
@@ -13,9 +14,6 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 
-[MAYBE USE THIS]It selects a random word from a list of favorite fruits and asks the user to guess a letter. The user continues guessing until they correctly guess all the letters in the random word or until they give up.
-
-[IS THIS OVER DETAILED??] The game stores a list of words, which the computer will choose from, at random. The user is then asked to input a letter and the game checks that this is a single letter from the alphabet, if it is not, the user is asked to input another letter. The code converts the letter to lowercase, if necessary, then checks if it is in the word, returning relevant statements if it is/isn't. 
 
 ## Installation instructions
 1. Clone or download this repository to your local machine.
@@ -28,26 +26,20 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 ## Usage instructions
 1. The program will ask you to enter a single letter.
 
-2. Follow the instructions in the terminal as you guess the letters.
+2. Follow the instructions in the terminal as you guess different letters.
 
 3. Continue entering letters until you guess all the letters in the random word, run out of lives or decide to quit.
+
 
 ## File structure
 - `milestone_5.py`: Contains the main Python code for the game.
 - 'Hangman()': Class which includes all the attributes and methods for the game
-- `ask_for_input()`: Function to take user input and validate it.
-- `check_guess(guess)`: Function to check if the entered letter is in the random word.
+- `ask_for_input()`: Method to take user input and validate it.
+- `check_guess(guess)`: Method to check if the entered letter is in the random word.
+- 'play_game(word_list)': Function to run the logic of the game. Ends the game if a player runs out of lives and therefore loses, or guesses all the correct letters and wins.
 
 
 ## License information
-[READ THE FOLLOWING WEBSITE https://choosealicense.com/licenses/mit/ FIRST]
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
 
-!!DELETE THIS BEFORE THE END: At minimum, your README file should contain the following information:
-Project Title - done
-Table of Contents, if the README file is long
-A description of the project: what it does, the aim of the project, and what you learned
-Installation instructions
-Usage instructions
-File structure of the project
-License information!!
+
