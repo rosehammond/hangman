@@ -1,5 +1,6 @@
 import random
 
+
 class Hangman:
     """
     This class is lets a user play hangman against the computer.
@@ -32,7 +33,6 @@ class Hangman:
         It then returns a string to let the user know if this is an invalid input, or if they have already tried the letter.
         If it is valid and unique, it adds the input to a list of guesses and passes the letter through the check_guess function.
         """
-        
         guess = input("Enter a single letter: ")
 
         if len(guess) != 1 or not guess.isalpha():
@@ -42,7 +42,6 @@ class Hangman:
         else:
             self.check_guess(guess)
             self.list_of_guesses.append(guess)
-
 
     def check_guess(self, guess):
         """
@@ -60,12 +59,11 @@ class Hangman:
 
         if lowercase_guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-
             for index, letter in enumerate(self.word):
                 if lowercase_guess == letter:
                     self.word_guessed[index] = lowercase_guess
             self.num_letters -= 1
-            
+            print(self.word_guessed)
         else:
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
@@ -76,11 +74,11 @@ def play_game(word_list):
     """
     This function codes the logic for the game, allowing it to end.
 
-        Args:
-            word_list (list): a list of words the computer choses from at random.
+    Args:
+        word_list (list): a list of words the computer choses from at random.
 
-        The purpose of this functions is to ensure the game ends either when the player loses as they run out of lives,
-        or the player wins by guessing all the letters correctly.
+    The purpose of this functions is to ensure the game ends either when the player loses as they run out of lives,
+    or the player wins by guessing all the letters correctly.
     """
     num_lives = 5
     game = Hangman(word_list, num_lives)
@@ -88,12 +86,13 @@ def play_game(word_list):
     while True:
       if game.num_lives == 0:
           print(f"You lost! The word was {game.word}")
-          break
-      elif game.num_letters > 0:
-          game.ask_for_input()   
+          break   
       elif game.num_lives != 0 and game.num_letters < 1:
           print(f"Congratulations. The word was {game.word}. You won the game!")
           break
+      else:
+          game.ask_for_input()
 
 # Call the function to play the game, insert any list of words to play with.
-play_game(["pineapple", "grapes", "mango", "strawberry", "kiwi"])
+if __name__ == '__main__':
+    play_game(["pineapple", "grapes", "mango", "strawberry", "kiwi"])
